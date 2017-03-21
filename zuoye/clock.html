@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.clock{
+		width:200px;height:200px;
+		border:5px solid #aaa;
+		box-shadow:0 0 5px #000;
+		background: radial-gradient(#fff,#ccc);
+		position: fixed;
+		top:0;left:0;bottom:0;right:0;
+		margin:auto;
+		border-radius: 50%;
+	}
+</style>
+<script>
+	window.onload=function(){
+		var clock=document.querySelector(".clock");
+		var newdate=new Date();
+		var hour=newdate.getHours();
+		var minutes=newdate.getMinutes();
+		var sec=newdate.getSeconds();
+		var h=creatPosit(6,40,hour*30+minutes*6/12);
+		var m=creatPosit(4,60,minutes*6);
+		var s=creatPosit(2,80,sec*6);
+		var t=setInterval(move,1000);
+		function move(){
+			var newdate=new Date();
+			var hour=newdate.getHours();
+			var minutes=newdate.getMinutes();
+			var sec=newdate.getSeconds();
+			h.style.transform="rotate("+(hour*30+minutes*6/12)+"deg)";
+			m.style.transform="rotate("+minutes*6+"deg)";
+			s.style.transform="rotate("+sec*6+"deg)";
+
+		}
+		creat();
+		function creat(){
+			var widths,heights;
+			for(var i=0;i<60;i++){
+				if(i%5==0){
+					widths=4;
+					heights=8;
+				}else{
+					widths=2;
+					heights=6;
+
+				}
+				var div=document.createElement("div");
+				div.style.cssText="width:"+widths+"px;height:"+heights+"px;background:#000;position:absolute;top:0;left:98px;"
+				div.style.transformOrigin="center 100px";
+				div.style.transform="rotate("+i*6+"deg)"
+				clock.appendChild(div);
+			}
+		}
+		function creatPosit(w,h,r){
+			var div=document.createElement("div");
+			var left=(200-w)/2;
+			var top=200/2-h;
+			div.style.cssText="width:"+w+"px;height:"+h+"px;background:#000;position:absolute;left:"+left+"px;top:"+top+"px;";
+			div.style.transformOrigin="center bottom";
+			div.style.transform="rotate("+r+"deg)";
+			clock.appendChild(div);
+			return div;
+		}
+	}
+</script>
+<body>
+	<div class="clock"></div>
+</body>
+</html>

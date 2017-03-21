@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		width:500px;
+		height:800px;
+		margin:0 auto;
+		position: relative;
+	}
+	.header{
+		width:314px;height:304px;
+		background: linear-gradient(225deg,#fff 0%,#09b9e4 27%, #095f76 95%);
+		border-radius:146px;
+		position: relative;
+		/*box-shadow: 5px -5px 50px #095f76 inset;*/
+		border:2px solid #000;
+		margin:0 auto;
+		z-index: 6;
+	}
+	.body{
+		width:224px;height:169px;
+		border:2px solid #000;
+		position:absolute;
+		top:280px;left:136px;
+		z-index: 6;
+		background: -webkit-gradient(linear, right top, left top, from(#07beea),color-stop(0.5, #0073b3),color-stop(0.75,#00b0e0), to(#0096be));
+	}
+	.belt{
+		width:234px;height:20px;
+		position:absolute;
+		top:270px;left:131px;
+		border:2px solid #000;
+		background:linear-gradient(#ca4100 0%,#800400 70%);
+		border-radius:10px;
+		z-index: 8;
+	}
+	.bodyleft{
+		width:80px;height:50px;
+		position:absolute;
+		top:300px;left:80px;
+		border:1px solid #000;
+		transform: rotate(150deg);
+		background:#0083A6;
+	}
+	.bodyright{
+		width:80px;height:50px;
+		position:absolute;
+		top:300px;left:343px;
+		border:1px solid #000;
+		transform:rotate(30deg);
+		background: linear-gradient(#07beea 85%,#555 95%);
+	}
+	.lefty{
+		width:60px;height:60px;
+		border:2px solid #000;
+		border-radius: 30px;
+		background:#fff;
+		position:absolute;
+		top:320px;left:49px;
+	}
+	.righty{
+		width:60px;height:60px;
+		border:2px solid #000;
+		border-radius: 30px;
+		background:#fff;
+		position:absolute;
+		top:320px;left:398px;
+	}
+	.footer{
+		width:280px;height:40px;
+		position:absolute;
+		top:448px;left:110px;
+		z-index: 10;
+	}
+	.footer .left{
+		width:125px;height:30px;
+		border:2px solid #000;
+		border-top-left-radius: 80px;
+		border-bottom-left-radius: 40px;
+		border-top-right-radius: 60px;
+		border-bottom-right-radius: 60px;
+		float:left;
+		margin-left:6px;
+		background: -webkit-gradient(linear, right top, left bottom, from(#fff),color-stop(0.75,#fff),color-stop(0.85,#eee), to(#999));
+	}
+	.footer .right{
+		width:125px;height:30px;
+		float:right;
+		margin-right:8px;
+		border:2px solid #000;
+		-webkit-border-top-left-radius: 60px;
+		-webkit-border-bottom-left-radius: 60px;
+		-webkit-border-top-right-radius: 80px;
+		-webkit-border-bottom-right-radius: 40px;
+		background: -webkit-gradient(linear, right top, left bottom, from(#fff),color-stop(0.75,#fff),color-stop(0.85,#eee), to(#999));
+	}
+	.footer .rew{
+		width:20px;height:10px;
+		position: relative;
+		top: -7px;
+		left: 127px;
+		background: #fff;
+		border-top: 2px solid #000;
+		border-right: 2px solid #000;
+		border-left: 2px solid #000;
+		-webkit-border-top-right-radius: 40px;
+		-webkit-border-top-left-radius: 40px;
+	}
+	.center{
+		width:170px;height:170px;
+		border:2px solid #000;
+		position:absolute;
+		top: -30px;
+		left: 27px;
+		/*z-index: -3;*/
+		border-radius: 50%;
+		background: #fff;
+	}
+	.clicle{
+		width:130px;height:130px;
+		border:2px solid #000;
+		border-radius: 65px;
+		position:absolute;
+		top:20px;left:20px;
+	}
+	.write{
+		width:134px;height:60px;
+		position: absolute;
+		left:-2px;top:0;
+		border-bottom: 2px solid #000;
+		background: #fff;
+	}
+	.bell{
+		width:40px;height:40px;
+		border-radius: 50px;
+		position: absolute;
+		top:280px;left:230px;
+		z-index: 20;
+		border:2px solid #000;
+		background: -webkit-gradient(linear, left top, left bottom, from(#f9f12a),color-stop(0.5, #e9e11a), to(#a9a100));
+	}
+	.bell .line{
+		width: 36px;
+		height: 2px;
+		background: #f9f12a;
+		border: #333 solid 2px;
+		position: relative;
+		top: 10px;
+	}
+	.bell .circle{
+		width: 12px;
+		height: 10px;
+		border-radius: 5px;
+		background: #000;
+		position: relative;
+		top: 14px;
+		left: 14px;
+	}
+	.bell .under{
+		width: 3px;
+		height: 15px;
+		background: #000;
+		position: relative;
+		top: 10px;
+		left: 18px;
+	}
+	.headerx{
+		width:264px;height:194px;
+		border:2px solid #000;
+		border-radius: 150px 150px;
+		position:absolute;
+		top:84px;left:115px;
+		z-index: 7;
+		background: -webkit-gradient(linear, right top, left bottom, from(#fff),color-stop(0.75,#fff),color-stop(0.83,#eee),color-stop(0.90,#999),color-stop(0.95,#444), to(#000));
+	}
+	.eye_left{
+		width:72px;height:83px;
+		border:2px solid #000;
+		position: absolute;
+		z-index: 20;
+		background: #fff;
+		top:-40px;left:53px;
+		border-radius: 35px 35px;
+	}
+	.eye_right{
+		width:72px;height:83px;
+		position: absolute;
+		z-index: 20;
+		top:-40px;right:60px;
+		background: #fff;
+		border:2px solid #000;
+		border-radius: 35px 35px;
+	}
+	.left_black{
+		width:15px;height:15px;
+		border-radius: 50%;
+		background: #000;
+		position: absolute;
+		top:55px;left:45px;
+	}
+	.right_black{
+		width:15px;height:15px;
+		border-radius: 50%;
+		background: #000;
+		position:absolute;
+		top:55px;right:45px;
+	}
+	.nose{
+		width:32px;height:32px;
+		border-radius: 50%;
+		border:2px solid #000;
+		position: absolute;
+		top:32px;left:110px;
+		z-index: 10;
+		background: radial-gradient(at 23px 13px,#fff 0%,#c93e00 25%);
+	}
+	.moouth{
+		width:200px;height:120px;
+		border:3px solid #333;
+		border-radius: 100%;
+		position: absolute;
+		top: 30px;
+		left: 29px;
+	}
+	.moouth_write{
+		width:240px;height:150px;
+		background: #fff;
+		border-radius: 50%;
+		position: relative;
+		top: -5px;
+		left: 15px;
+	}
+	.nose_line{
+		width:3px;height:110px;
+		background: #000;
+		position: absolute;
+		top:43px;left:127px;
+	}
+	.line_top{
+		background: #333;
+		height: 2px;
+		width: 60px;
+		-webkit-transform: rotate(160deg);
+		position: absolute;
+		top: 55px;
+		left: 180px;
+		z-index: 20;
+	}
+	.line_center{
+		background: #333;
+		height: 2px;
+		width: 60px;
+		position: absolute;
+		top: 75px;
+		left: 185px;
+		z-index: 20;
+	}
+	.line_right{
+		background: #333;
+		height: 2px;
+		width: 60px;
+		-webkit-transform: rotate(190deg);
+		position: absolute;
+		top: 95px;
+		left: 185px;
+		z-index: 20;
+	}
+	.linel_top{
+		background: #333;
+		height: 2px;
+		width: 60px;
+		-webkit-transform: rotate(20deg);
+		position: absolute;
+		top: 55px;
+		left: 20px;
+		z-index: 20;
+	}
+	.linel_center{
+		background: #333;
+		height: 2px;
+		width: 60px;
+		/*-webkit-transform: rotate(20deg);*/
+		position: absolute;
+		top: 75px;
+		left: 18px;
+		z-index: 20;
+	}
+	.linel_right{
+		background: #333;
+		height: 2px;
+		width: 60px;
+		-webkit-transform: rotate(-10deg);
+		position: absolute;
+		top: 95px;
+		left: 18px;
+		z-index: 20;
+	}
+</style>
+<body>
+<div class="box">
+	<div class="header"></div>
+	<div class="headerx">
+		<div class="eye_left">
+			<div class="left_black"></div>
+		</div>
+		<div class="eye_right">
+			<div class="right_black"></div>
+		</div>
+		<div class="nose"></div>
+		<div class="moouth"></div>
+		<div class="moouth_write"></div>
+		<div class="nose_line"></div>
+		<div class="line_top"></div>
+		<div class="line_center"></div>
+		<div class="line_right"></div>
+		<div class="linel_top"></div>
+		<div class="linel_center"></div>
+		<div class="linel_right"></div>
+	</div>
+	<div class="body">
+		<div class="center">
+			<div class="clicle">
+				<div class="write"></div>
+			</div>
+		</div>
+	</div>
+	<div class="belt"></div>
+	<div class="bell">
+		<div class="line"></div>
+		<div class="circle"></div>
+		<div class="under"></div>
+	</div>
+	<div class="bodyleft"></div>
+	<div class="bodyright"></div>
+	<div class="lefty"></div>
+	<div class="righty"></div>
+	<div class="footer">
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="rew"></div>
+	</div>
+</div>
+</body>
+</html>
